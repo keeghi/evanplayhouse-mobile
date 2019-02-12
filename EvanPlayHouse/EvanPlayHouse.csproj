@@ -10,6 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Realm.Database" Version="3.4.0" />
+    <PackageReference Include="Splat" Version="6.1.7" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="9.10.1" />
+    <PackageReference Include="ReactiveUI" Version="9.10.1" />
+    <PackageReference Include="ReactiveUI.Events.XamForms" Version="9.10.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RxNavigation\RxNavigation\RxNavigation.csproj" />
+    <ProjectReference Include="..\RxNavigation\RxNavigation.XamForms\RxNavigation.XamForms.csproj" />
   </ItemGroup>
 </Project>

@@ -4,4 +4,20 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="9.10.1" />
+    <PackageReference Include="Splat" Version="6.1.7" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Refit" Version="4.6.58" />
+    <PackageReference Include="fusillade" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\HttpTools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvanPlayHouse.Data\EvanPlayHouse.Data.csproj" />
+    <ProjectReference Include="..\EvanPlayHouse.Common\EvanPlayHouse.Common.csproj" />
+  </ItemGroup>
 </Project>

@@ -10,8 +10,7 @@ namespace EvanPlayHouse
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = AppBootstrapper.CreateMainView();
         }
 
         protected override void OnStart()

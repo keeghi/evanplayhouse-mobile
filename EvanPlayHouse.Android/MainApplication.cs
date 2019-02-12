@@ -1,10 +1,27 @@
 ﻿using System;
+using Android.App;
+using Android.Runtime;
+
 namespace EvanPlayHouse.Droid
 {
-    public class MainApplication
+#if DEBUG
+    [Application(Debuggable = true)]
+#else
+    [Application(Debuggable = false)]
+#endif
+    public class MainApplication : Application
     {
-        public MainApplication()
+        public MainApplication(IntPtr handle, JniHandleOwnership transer) : base(handle, transer)
         {
         }
+
+        public override void OnCreate()
+        {
+            base.OnCreate();
+            AppBootstrapper.Initialize();
+        }
+
+
     }
+
 }
