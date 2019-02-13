@@ -18,9 +18,19 @@
     <PackageReference Include="ReactiveUI" Version="9.10.1" />
     <PackageReference Include="ReactiveUI.Events.XamForms" Version="9.10.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RxNavigation\RxNavigation\RxNavigation.csproj" />
     <ProjectReference Include="..\RxNavigation\RxNavigation.XamForms\RxNavigation.XamForms.csproj" />
+    <ProjectReference Include="..\EvanPlayHouse.Common\EvanPlayHouse.Common.csproj" />
+    <ProjectReference Include="..\EvanPlayHouse.Core\EvanPlayHouse.Core.csproj" />
+    <ProjectReference Include="..\EvanPlayHouse.Data\EvanPlayHouse.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\" />
+    <Folder Include="Modules\Homes\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Controls\ViewCells\" />
   </ItemGroup>
 </Project>

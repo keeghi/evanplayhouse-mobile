@@ -10,6 +10,7 @@ namespace EvanPlayHouse
         public App()
         {
             InitializeComponent();
+            AppBootstrapper.Initialize();
             MainPage = AppBootstrapper.CreateMainView();
         }
 

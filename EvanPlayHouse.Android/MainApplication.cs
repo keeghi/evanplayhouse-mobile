@@ -18,7 +18,7 @@ namespace EvanPlayHouse.Droid
         public override void OnCreate()
         {
             base.OnCreate();
-            AppBootstrapper.Initialize();
+            //AppBootstrapper.Initialize();
         }
 
 

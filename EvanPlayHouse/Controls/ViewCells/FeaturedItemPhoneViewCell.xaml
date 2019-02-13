@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rxui:ReactiveContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                          x:Class="EvanPlayHouse.Controls.ViewCells.FeaturedItemPhoneViewCell" 
+                          xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+                          xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms" 
+                          xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+                          xmlns:vms="clr-namespace:EvanPlayHouse.Controls.ViewCells" x:TypeArguments="vms:FeaturedItemViewModel">
+    <ffimageloading:CachedImage x:Name="Image" Aspect="AspectFill" DownsampleToViewSize="true" ErrorPlaceholder="img_broken" LoadingPlaceholder="img_placeholder">      
+    </ffimageloading:CachedImage>
+</rxui:ReactiveContentView>

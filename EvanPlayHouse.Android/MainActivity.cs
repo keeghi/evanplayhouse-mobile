@@ -3,12 +3,13 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Forms.Platform;
 
 namespace EvanPlayHouse.Droid
 {
     [Activity(Label = "EvanPlayHouse", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -18,7 +19,9 @@ namespace EvanPlayHouse.Droid
             base.OnCreate(savedInstanceState);
             CachedImageRenderer.Init(true);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CarouselViewRenderer.Init();
+
             LoadApplication(new App());
         }
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using EvanPlayHouse.Core.Services.Fakes;
+using EvanPlayHouse.Modules.Homes;
 using ReactiveUI;
 using RxNavigation;
 using RxNavigation.XamForms;
@@ -13,10 +15,13 @@ namespace EvanPlayHouse
         {
             Locator.CurrentMutable.InitializeSplat();
             Locator.CurrentMutable.InitializeReactiveUI();
-
-            RegisterServices();
+           
             RegisterViews();
+            RegisterServices();
+           
         }
+
+
 
         private static void RegisterServices()
         {
@@ -25,7 +30,16 @@ namespace EvanPlayHouse
 
         private static void RegisterViews()
         {
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Phone:
+                    Locator.CurrentMutable.Register(() => new HomePhoneView(), typeof(IViewFor<HomeViewModel>));
 
+                    break;
+                case TargetIdiom.Tablet:
+                    Locator.CurrentMutable.Register(() => new HomeTabletView(), typeof(IViewFor<HomeViewModel>));
+                    break;
+            }
         }
 
         public static NavigationPage CreateMainView()
@@ -33,7 +47,7 @@ namespace EvanPlayHouse
             var mainView = new MainView(RxApp.TaskpoolScheduler, RxApp.MainThreadScheduler, ViewLocator.Current);
             var viewStackService = new ViewStackService(mainView, Device.RuntimePlatform == Device.Android);
             Locator.CurrentMutable.RegisterConstant(viewStackService, typeof(IViewStackService));
-            //TODO: push first mainPage
+            viewStackService.PushPage(new HomeViewModel(new FakeToyService())).Subscribe();
             return mainView;
         }
     }
