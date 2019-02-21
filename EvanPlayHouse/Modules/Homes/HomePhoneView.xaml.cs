@@ -1,9 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Reactive.Disposables;
-using System.Reactive.Linq;
-using ReactiveUI;
-using Xamarin.Forms;
+﻿using ReactiveUI;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using NavigationPage = Xamarin.Forms.NavigationPage;
 
 namespace EvanPlayHouse.Modules.Homes
 {
@@ -13,18 +10,12 @@ namespace EvanPlayHouse.Modules.Homes
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
             this.WhenActivated(disposable =>
             {
-                //this.WhenAnyValue(x => x.ViewModel.FeaturedToys)
-                //.Where(featuredToys => featuredToys != null && featuredToys.Any())
-                //.Do(featuredToys=>
-                //{
-                //    FeaturedToysCarousel.ItemsSource = featuredToys;
-                //})
-                //.Subscribe().DisposeWith(disposable);
-                this.OneWayBind(this.ViewModel, vm => vm.FeaturedToys, v => v.FeaturedToysCarousel.ItemsSource).DisposeWith(disposable);
+                this.OneWayBind(this.ViewModel, vm => vm.FeaturedToys, v => v.FeaturedToysCarousel.ItemsSource);
+                this.OneWayBind(this.ViewModel, vm => vm.AvailableToys, v => v.AvailableToysStackLayout.ItemsSource);
             });
         }
-
     }
 }

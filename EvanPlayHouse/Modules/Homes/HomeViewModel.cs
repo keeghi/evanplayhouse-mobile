@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using EvanPlayHouse.Controls.ViewCells;
 using EvanPlayHouse.Core.Services;
+using EvanPlayHouse.Helpers;
 using ReactiveUI;
 using Splat;
 
@@ -25,7 +27,22 @@ namespace EvanPlayHouse.Modules.Homes
                 .GetFeaturedToys()
                 .Subscribe(featuredToys =>
                 {
+                    if (featuredToys == null || !featuredToys.Any())
+                    {
+                        return;
+                    }
                     FeaturedToys = featuredToys.Select(featuredToy => new FeaturedItemViewModel(featuredToy)).ToList();
+                });
+            _toyService
+                .GetAvailableToys()
+                .Subscribe(availableToys =>
+                {
+                    if (availableToys == null || !availableToys.Any())
+                    {
+                        return;
+                    }
+                    var allAvailableToys= availableToys.Select(availableToy => new AvailableItemViewModel(availableToy)).ToList();
+                    AvailableToys.AddRange(allAvailableToys);
                 });
         }
 
@@ -39,6 +56,14 @@ namespace EvanPlayHouse.Modules.Homes
             get => _featuredToys;
             set => this.RaiseAndSetIfChanged(ref _featuredToys, value);
         }
+
+        private ObservableRangeCollection<AvailableItemViewModel> _availableToys = new ObservableRangeCollection<AvailableItemViewModel>();
+        public ObservableRangeCollection<AvailableItemViewModel> AvailableToys
+        {
+            get => _availableToys;
+            set => this.RaiseAndSetIfChanged(ref _availableToys, value);
+        }
+
 
         #endregion
     }

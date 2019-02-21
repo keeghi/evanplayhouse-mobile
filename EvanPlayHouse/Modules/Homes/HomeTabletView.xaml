@@ -13,7 +13,8 @@
             <Label Style="{StaticResource SubtitleStyle}" Text="Hot Item" Margin="0,20,0,0"/>
             <controls:CarouselViewControl Orientation="Horizontal"  x:Name="FeaturedToysCarousel"
                                           InterPageSpacing="10" 
-                                          VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                          VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                          HeightRequest="80">
                 <controls:CarouselViewControl.ItemTemplate>
                     <DataTemplate>
                         <viewCells:FeaturedItemTabletViewCell />

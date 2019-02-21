@@ -19,6 +19,7 @@
     <PackageReference Include="ReactiveUI.Events.XamForms" Version="9.10.7" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RxNavigation\RxNavigation\RxNavigation.csproj" />
@@ -32,5 +33,6 @@
     <Folder Include="Modules\Homes\" />
     <Folder Include="Controls\" />
     <Folder Include="Controls\ViewCells\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

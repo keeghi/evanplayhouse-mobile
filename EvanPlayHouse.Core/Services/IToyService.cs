@@ -7,5 +7,6 @@ namespace EvanPlayHouse.Core.Services
     public interface IToyService
     {
         IObservable<IEnumerable<FeaturedToy>> GetFeaturedToys();
+        IObservable<IEnumerable<Toy>> GetAvailableToys();
     }
 }

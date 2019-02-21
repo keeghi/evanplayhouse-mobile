@@ -171,6 +171,9 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.4.859</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -178,5 +181,12 @@
       <Project>{1B1060F1-AC45-41B1-9DF1-080E9E60F2BD}</Project>
       <Name>EvanPlayHouse</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gambar1.png" />
+    <BundleResource Include="Resources\gambar2.png" />
+    <BundleResource Include="Resources\gambar3.png" />
+    <BundleResource Include="Resources\gambar4.png" />
+    <BundleResource Include="Resources\gambar5.png" />
   </ItemGroup>
 </Project>

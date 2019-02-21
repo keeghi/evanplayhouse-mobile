@@ -4,6 +4,8 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using ReactiveUI;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using NavigationPage = Xamarin.Forms.NavigationPage;
 
 namespace EvanPlayHouse.Modules.Homes
 {
@@ -13,6 +15,7 @@ namespace EvanPlayHouse.Modules.Homes
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
             this.WhenActivated(disposable =>
             {
                 this.WhenAnyValue(x => x.ViewModel.FeaturedToys)
