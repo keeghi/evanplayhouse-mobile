@@ -26,7 +26,8 @@
                                                   ShowIndicators="true"
                                                   IndicatorsShape="Circle"
                                                   IndicatorsTintColor="LightSlateGray"
-                                                  CurrentPageIndicatorTintColor="Red">
+                                                  CurrentPageIndicatorTintColor="Red"
+                                                  AnimateTransition="true">
                     <carouselView:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <viewCells:FeaturedItemPhoneViewCell />
